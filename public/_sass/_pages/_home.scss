@@ -81,6 +81,9 @@
 
 .home-about-me-block {
   padding: 10vh 0;
+  .container {
+    max-width: 100%;
+  }
   h2 {
     margin: 0;
     padding: 0 0 20px;

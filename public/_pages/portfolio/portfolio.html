@@ -17,9 +17,9 @@ layout: portfolio
     {% for item in site.portfolio %}
 
       <div class="item">
-        <a href="{{item.url}}">
+        <a href="{{site.url}}/{{item.url}}">
           <div class="img-container">
-            <img src="{{ item.featured_image}}" alt="{{item.title}}" />
+            <img src="{{site.url}}/{{ item.featured_image}}" alt="{{item.title}}" />
           </div>
           <div class="project-name">
             <span class="portfolio-link">{{item.title}}</span>

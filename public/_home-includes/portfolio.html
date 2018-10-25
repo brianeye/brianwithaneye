@@ -5,9 +5,9 @@
     {% for portfolio in site.portfolio limit:3 %}
 
       <div class="item os-animation" data-os-animation="fadeInUp" data-os-animation-delay="{{portfolio.delay}}">
-        <a href="{{portfolio.url | prepent site.baseurl}}">
+        <a href="{{site.url}}{{portfolio.url | prepent site.baseurl}}">
           <div class="img-container">
-            <img src="{{ portfolio.featured_image}}" alt="{{portfolio.title}}" />
+            <img src="{{site.url}}/{{ portfolio.featured_image}}" alt="{{portfolio.title}}" />
           </div>
           <div class="project-name">
             <span class="portfolio-link">{{portfolio.title}}</span>
