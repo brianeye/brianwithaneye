@@ -1,0 +1,15 @@
+.cta {
+  padding: 15px 40px;
+  background: $cta-bg;
+  border: 1px solid transparent;
+  border-radius: 30px;
+  color: #fff;
+  text-align: center;
+  transition: all 0.3s ease-out;
+  &:hover {
+    background: transparent;
+    border: 1px solid $cta-bg;
+    color: $cta-bg;
+    text-decoration: none;
+  }
+}

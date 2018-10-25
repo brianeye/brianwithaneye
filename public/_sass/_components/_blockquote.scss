@@ -1,0 +1,14 @@
+blockquote {
+  @media screen and (max-width: 1023px) {
+    font-size: 30px;
+  }
+  margin: 10vh 0 20vh;
+  padding: 20vh 10vh;
+  background: $red-pink;
+  color: #fff;
+  font-size: 50px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  text-align: center;
+  transition: all 0.5s;
+}

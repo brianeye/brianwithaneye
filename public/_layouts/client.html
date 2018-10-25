@@ -1,0 +1,110 @@
+---
+layout-class: client
+---
+{% include header.html page=page %}
+<main class="client-layout">
+  <!-- <section>
+    <div class="img-container">
+      <img src="{{site.url}}/{{page.featured_image}}" />
+    </div>
+  </section> -->
+  <section class="client-layout">
+    <div class="client-page-name">
+      <img src="{{site.url}}/{{page.client-logo}}" />
+      <!-- <div class="scroll-downs">
+        <div class="mousey">
+          <div class="scroller"></div>
+        </div>
+      </div> -->
+    </div>
+
+    <div id="hero-img" class="" style="background-image: url('{{site.url}}/{{page.featured_image}}');">
+      <div id="img-border-left"></div>
+      <div id="img-border-right"></div>
+    </div>
+    <div class="container">
+      <div class="client-details os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0.3s">
+        <div class="info-col">
+          <div class="col">
+            <h6>Role:</h6>
+            <h2>{{page.role}}</h2>
+          </div>
+          <div class="col">
+            <h6>Client:</h6>
+            <h2>{{page.client-name}}</h2>
+          </div>
+          <div class="col">
+            <h6>Year:</h6>
+            <h2>{{page.year}}</h2>
+          </div>
+        </div>
+        <div class="about-project">
+          <h2>About the Project:</h2>
+          <p>{{content}}</p>
+        </div>
+      </div>
+
+    </div>
+    <div class="image-wrapper os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0.3s">
+      <figure>
+        <div class="single-image-wrapper">
+          <img src="{{site.url}}/{{page.support-image-1}}" />
+        </div>
+      </figure>
+    </div>
+
+    <div class="image-wrapper os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0.3s">
+      <figure>
+        <div class="single-image-wrapper">
+          <img src="{{site.url}}/{{page.support-image-2}}" />
+        </div>
+      </figure>
+    </div>
+    {% if page.pull-quote %}
+    <blockquote class="os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0.3s" style="background-image: url('{{site.url}}/{{page.pull-quote-img}}'); background-position: 0% 64px; background-attachment: fixed; background-size: 800px auto; background-repeat: no-repeat;">
+      "{{page.pull-quote}}"
+    </blockquote>
+    {% endif %}
+    <div class="image-wrapper os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0.3s">
+      <figure>
+        <div class="single-image-wrapper">
+          <img src="{{site.url}}/{{page.support-image-3}}" />
+        </div>
+      </figure>
+    </div>
+    <div class="container website-button os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0.3s">
+      <div class="col">
+        {% if page.website-url %}
+        <a href="{{page.website-url}}" class="cta" target="_blank">Visit {{page.title}}.com</a>
+        {% endif %}
+      </div>
+    </div>
+    <div class="container">
+
+      <div class="col prev-next-container">
+
+        {% capture the_collection %}{{page.collection}}{% endcapture %}
+          {% if page.collection %}
+            {% assign  document = site[the_collection]  %}
+          {% endif %}
+        {% for links in document  %}
+          {% if links.title == page.title %}
+            {% unless forloop.first %}
+              {% assign prevurl = prev.url %}
+            {% endunless %}
+            {% unless forloop.last %}
+              {% assign next = document[forloop.index] %}
+              {% assign nexturl = next.url %}
+            {% endunless %}
+          {% endif %}
+          {% assign prev = links %}
+        {% endfor %}
+        <ul class="prev-next-nav">
+          <li>{% if prevurl %}<a href="{{prevurl}}" class="prev">PREV</a>{% endif %}</li>
+          <li>{% if nexturl %}<a href="{{nexturl}}" class="nxt">NEXT</a>{% endif %}</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+{% include footer.html %}

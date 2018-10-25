@@ -1,0 +1,37 @@
+---
+permalink: /portfolio/
+layout-class: portfolio
+layout: portfolio
+---
+{% include header.html %}
+<main>
+  <section class="intro-container">
+    <div class="intro-block">
+        <h1>A collection of my works</h1>
+    </div>
+  </section>
+  <section>
+    <div class="portfolio">
+      <div class="container">
+        <div class="col">
+    {% for item in site.portfolio %}
+
+      <div class="item">
+        <a href="{{item.url}}">
+          <div class="img-container">
+            <img src="{{ item.featured_image}}" alt="{{item.title}}" />
+          </div>
+          <div class="project-name">
+            <span class="portfolio-link">{{item.title}}</span>
+            <span class="description-text">{{item.lead_text}}</span>
+          </div>
+          </a>
+      </div>
+
+    {% endfor %}
+      </div>
+    </div>
+  </div>
+  </section>
+</main>
+{% include footer.html %}

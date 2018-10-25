@@ -1,0 +1,208 @@
+.intro-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  min-height: 0;
+  //background-color: $red-pink;
+  // background:
+  //   radial-gradient(rgba(0,0,0,0.1), rgba(0,0,0,1)),
+  //   url('../images/placer-bg-img.jpg') no-repeat;
+  //   background-size: cover;
+  #particles-js{
+    width: 100%;
+    height: 100%;
+    background-color: $red-pink;
+    //background-image: url('');
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+  .container {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    right: 0;
+    max-width: 1460px;
+    margin: 0 auto;
+  }
+
+    .main-headline, p {
+      color: #fff;
+      text-align: center;
+    }
+
+    .main-headline {
+      @media screen and (max-width: 767px) {
+        font-size: 28px;
+        margin-bottom: 20px;
+      }
+      margin-bottom: 50px;
+      font-size: 60px;
+    }
+
+    p {
+      @media screen and (max-width: 767px) {
+        font-size: 15px;
+      }
+      font-weight: 300;
+      font-size: 18px;
+    }
+
+    .scroll-downs {
+      @media screen and (max-width: 767px) {
+        top: 75%;
+      }
+      top: 70%;
+      .mousey {
+        border-color: #fff;
+        &:after {
+          content: 'Scroll';
+          display: block;
+          position: absolute;
+          bottom: -50%;
+          left: -3px;
+          right: 0;
+          width: 100%;
+          font-family: 'Open Sans' sans-serif;
+          font-size: 14px;
+          font-weight: 600;
+          color: #fff;
+        }
+      }
+      .scroller {
+        background-color: #fff;
+      }
+
+    }
+}
+
+.home-about-me-block {
+  padding: 10vh 0;
+  h2 {
+    margin: 0;
+    padding: 0 0 20px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 48px;
+    font-weight: 800;
+  }
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.home-portfolio {
+  margin-bottom: 10vh;
+  //margin-top: 10vw;
+  //margin-bottom: 15vw;
+  .container {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .col {
+    @media screen and (max-width: 991px) {
+      justify-content: center;
+      align-items: center;
+      display: block;
+    }
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-content: center;
+      flex-wrap: wrap;
+
+    padding: 0;
+    transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
+    .item {
+      @media screen and (max-width: 991px) {
+        display: block;
+        width: 100%;
+        //max-width: 320px;
+        margin: 0 auto 30px;
+      }
+      @media screen and (min-width: 992px) {
+        max-width: 33.3%;
+      }
+      position: relative;
+      flex: 1;
+      margin: 0 10px 0px;
+      padding: 0;
+      background: #fff;
+      //box-shadow: 0px 0px 24px 0 rgba(0,0,0,0.25);
+      //border: 1px solid #cacaca;
+      transition: all 0.3s cubic-bezier(0.25,0.8,0.25,1);
+      overflow: hidden;
+      &:first-child {
+        @media screen and (min-width: 992px) {
+          margin-left: 0;
+        }
+
+      }
+      &:last-child {
+        @media screen and (min-width: 992px) {
+          margin-right: 0;
+        }
+      }
+      &:hover {
+        box-shadow: 10px 10px 35px 0 rgba(0,0,0,0.12);
+        img {
+          transform: scale(1.1);
+        }
+        a {
+          color: #fff;
+        }
+      }
+      .img-container {
+        height: 100%;
+        overflow: hidden;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+        border: 0px;
+        transform: scale(1);
+        transition: all 0.8s cubic-bezier(0.25,0.8,0.25,1);
+      }
+      .project-name {
+        @media screen and (max-width: 991px) {
+          padding: 10px 0;
+        }
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        padding: 20px 0;
+        background: #fff;
+        z-index: 2;
+      }
+      .portfolio-link {
+        display: block;
+        width: 100%;
+        padding: 0px 20px 0px;
+        background: transparent;
+        border: 0px;
+        color: $red-pink;
+        font-size: 24px;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 800;
+        text-align: left;
+        transition: all 0.5s cubic-bezier(0.25,0.8,0.25,1);
+        &:hover {
+          color: $red-pink;
+          text-decoration: none;
+        }
+      }
+
+      span.description-text {
+        padding-left: 20px;
+        color: $red-pink;
+        font-size: 12px;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 400;
+      }
+    }
+  }
+}

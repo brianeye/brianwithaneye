@@ -1,0 +1,62 @@
+---
+permalink: /blog/
+layout-class: blog
+---
+{% include header.html %}
+
+
+<section class="">
+    <article>
+        <div class="container">
+          <div class="row">
+            <h5 class="small-title">Blog</h5>
+            <h2 class="main-headline">Latest Posts</h2>
+          </div>
+            <div class="row">
+                <div class="col-md-10">
+                  {% for post in site.posts %}
+                  <div class="blog-post">
+                    {% if post.featured_image or post.featured_video_id %}
+                    <a href="{{ post.url | prepend: site.baseurl }}" class="featurette">
+                        {% if post.featured_image %}
+                        <span class="img" style="background-image: url('{{ post.featured_image }}');"></span>
+                        {% endif %}
+
+                        {% if post.featured_video_id %}
+                        <iframe src="https://www.youtube.com/embed/{{ post.featured_video_id }}" frameborder="0" allowfullscreen></iframe>
+                        {% endif %}
+                    </a>
+                    {% endif %}
+                    <h5>
+                      {{ post.date | date: "%m.%d.%y" }}
+                      {% if post.categories != empty %}
+                          &middot;
+                          {% for category in post.categories %}
+                              <span>{{ category }}</span>
+                          {% endfor %}
+                      {% endif %}
+                    </h5>
+                    <h3 class="blog-post-title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+
+                    <div class="excerpt"><p>{{ post.excerpt }}</p></div>
+                    <a href="{{ post.url | prepend: site.baseurl }}" class="read-more btn btn-info btn-lg">Read More <i class="fa fa-angle-right"></i></a>
+                  </div>
+                  {% endfor %}
+                </div>
+                <!-- <aside class="col-md-2">
+                  <h4>Other Posts</h4>
+                  <span>
+                  {% if page.title %}
+                      {{ page.title }}
+                  {% else %}
+                      {{ site.data.global.title }}
+                  {% endif %}
+                  </span>
+                </aside> -->
+            </div>
+
+        </div>
+    </article>
+
+</section>
+{% include footer.html %}

@@ -1,0 +1,25 @@
+<section class="home-portfolio">
+  <div class="container">
+    <!-- <h2>Portfolio</h2> -->
+    <div class="col">
+    {% for portfolio in site.portfolio limit:3 %}
+
+      <div class="item os-animation" data-os-animation="fadeInUp" data-os-animation-delay="{{portfolio.delay}}">
+        <a href="{{portfolio.url | prepent site.baseurl}}">
+          <div class="img-container">
+            <img src="{{ portfolio.featured_image}}" alt="{{portfolio.title}}" />
+          </div>
+          <div class="project-name">
+            <span class="portfolio-link">{{portfolio.title}}</span>
+            <span class="description-text">{{portfolio.lead_text}}</span>
+          </div>
+          <!-- <a href="{{ portfolio.url | prepend: site.baseurl }}" class="read-more btn btn-info btn-lg">{{portfolio.title}} <i class="fa fa-angle-right"></i></a> -->
+          <!-- <div class="excerpt"><p>{{ works.excerpt }}</p></div> -->
+          </a>
+      </div>
+
+    {% endfor %}
+
+    </div>
+  </div>
+</section>

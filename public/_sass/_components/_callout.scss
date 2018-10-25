@@ -1,0 +1,48 @@
+.callout {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  &--white-bg {
+    background: #fff;
+  }
+  &--blue-bg {
+    background: #372154;
+    p {
+      color: #fff;
+    }
+  }
+  .container {
+    @media screen and (min-width: 992px) {
+      display: flex;
+    }
+    padding: 120px 0;
+    .col {
+      @media screen and (min-width: 992px) {
+        flex: 1;
+        justify-content: center;
+        align-self: center;
+        margin: 0;
+        &:first-child {
+          text-align: right;
+        }
+      }
+      margin: 0 0 30px;
+      padding: 0;
+      text-align: center;
+
+      p {
+        @media screen and (max-width: 767px) {
+          display: block;
+          margin-right: 0;
+          font-size: 20px;
+          margin-bottom: 30px;
+        }
+        display: inline-block;
+        margin-right: 30px;
+        margin-bottom: 20px;
+        font-size: 30px;
+        font-weight: 800;
+      }
+    }
+  }
+}

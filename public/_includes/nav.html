@@ -1,0 +1,30 @@
+<nav class="nav outer-nav top horizontal">
+  <a href="#" class="close-nav">Return</a>
+  <div class="nav-container">
+    <ul>
+      {% for item in site.data.nav.main %}
+          <li>
+              <a href="{{ item.url }}" class="nav-link" target="{{item.target}}">{{ item.text }}</a>
+          </li>
+      {% endfor %}
+    </ul>
+  </div>
+</nav>
+
+<!-- <nav class="navbar navbar-expand-lg fixed-top justify-content-between">
+  <div class="container">
+      <a class="navbar-brand" href="/"><img src="{{ site.data.global.logo }}" class="" alt="{{ site.data.global.logo-alt-text}}" /></a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="mainNav" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav ml-auto">
+              {% for item in site.data.nav.main %}
+                  <li class="nav-item">
+                      <a href="{{ item.url }}" class="nav-link">{{ item.text }}</a>
+                  </li>
+              {% endfor %}
+          </ul>
+      </div>
+    </div>
+</nav> -->

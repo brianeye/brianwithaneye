@@ -1,0 +1,26 @@
+// .pod-row {
+//   &:last-child {
+//     .pod {
+//       border-top: 0px;
+//     }
+//   }
+// }
+// .pod {
+//   @media screen and (max-width: 767px) {
+//     padding-right: 40px !important;
+//     padding-left: 40px !important;
+//   }
+//   padding: 60px 80px !important;
+//   // border-top: 1px solid $determan-lt-gray;
+//   // border-right: 1px solid $determan-lt-gray;
+//   // border-bottom: 1px solid $determan-lt-gray;
+//   &:nth-child(3n) {
+//     border-right: 0px;
+//   }
+//   h4, h6 {
+//     margin-bottom: 30px;
+//   }
+//   h6, p, img {
+//     text-align: center;
+//   }
+// }

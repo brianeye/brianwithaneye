@@ -1,0 +1,49 @@
+.scroll-downs {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+
+  width :34px;
+  height: 55px;
+  
+}
+.mousey {
+  width: 3px;
+  padding: 10px 12px;
+  height: 30px;
+  border: 2px solid $red-pink;
+  border-radius: 25px;
+  opacity: 0.75;
+  box-sizing: content-box;
+  &:after {
+    content: 'Scroll';
+    display: block;
+    position: absolute;
+    bottom: -50%;
+    left: -3px;
+    right: 0;
+    width: 100%;
+    font-family: 'Open Sans' sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: $red-pink;
+  }
+}
+.scroller {
+  width: 3px;
+  height: 10px;
+  border-radius: 25%;
+  background-color: $red-pink;
+  animation-name: scroll;
+  animation-duration: 2.2s;
+  animation-timing-function: cubic-bezier(.15,.41,.69,.94);
+  animation-iteration-count: infinite;
+}
+@keyframes scroll {
+  0% { opacity: 0; }
+  10% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(15px); opacity: 0;}
+}
